@@ -5,7 +5,6 @@ npm i
 
 # Step 2: Start the development server with auto-reloading and an instant preview.
 npm run dev
-```
 
 ## What technologies are used for this project?
 

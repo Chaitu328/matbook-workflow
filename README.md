@@ -1,54 +1,11 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/51b2c947-5dd0-4366-98cf-66d7a8c19000
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/51b2c947-5dd0-4366-98cf-66d7a8c19000) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
 Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+# Step 1: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 2: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?
 
@@ -60,10 +17,52 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+# Login & Registration Page  
+- **Uses Bootstrap CSS**  
+- **Left Side:** Contains descriptive text  
+- **Right Side:** "Log in to your account" section  
+- **Features:**  
+  - Email & password (password stored as a hash)  
+  - "Remember Me" (saves email & password in local storage)  
+  - "Forgot Password" (resets via email)  
+  - Registration:  
+    - "Sign up here" option  
+    - Social sign-in (Google, Facebook, etc.)  
+  - User details persist using local storage  
 
-Simply open [Lovable](https://lovable.dev/projects/51b2c947-5dd0-4366-98cf-66d7a8c19000) and click on Share -> Publish.
+---  
+# Workflow Page  
+- **Hamburger Icon:** Changes color on click  
+- **Search Box:** Filters workflows  
+- **"Create New Process" Button:** Opens Process Page  
 
-## I want to use a custom domain - is that possible?
+### Workflow List  
+Each workflow displays:  
+- Name, ID, Last Edited (Format: `{Author Name} | {hh:mm} IST {dd/mm}`)  
+- Description, Tag Icon  
+- **Actions:**  
+  - **Execute:** Confirmation dialog with a red warning message  
+  - **Edit:** Opens the process page  
+  - **Kebab Icon:** Opens "Delete" option → Confirmation dialog with a red warning  
+  - **Downward Icon:** Expands details (pass/fail status with date & time)  
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---  
+# Process Page  
+- **Navigation:**  
+  - "Go Back" → Returns to Workflow Page  
+  - "Save" → Opens dialog (enter name & description), saves to Workflow Page  
+- **Controls:**  
+  - "Start" & "Stop" buttons  
+  - "+" Button → Adds API Call, Email, or Text Box (each with a delete option)  
+  - Whiteboard-like UI (move, resize elements)  
+
+### Element Details  
+- **API Box (Double Click to Open Dialog):**  
+  - Configuration: Method, URL, Headers, Body  
+- **Email Box:** Email input field  
+- **Text Box:** Message input field  
+
+### Process Status  
+- **Pass:** Both API & Email succeed  
+- **Fail:** If either API or Email fails  
+- **Downward Icon:** Shows pass/fail details with timestamps
